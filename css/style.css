@@ -125,6 +125,10 @@ nav a {
     color: #000000;
     
 }
+.dark-mode .container{
+    background-color: #333;
+    color: #ffffff;
+}
 
 #toTop {
     display: none; 
