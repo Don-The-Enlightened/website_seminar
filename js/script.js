@@ -1,3 +1,6 @@
+window.onload
+{
+  
 document.addEventListener("scroll", function() {
   var fadeInElements = document.querySelectorAll('.fade-in-image');
 
@@ -34,4 +37,6 @@ function scrollFunction() {
 function topFunction() {
   document.body.scrollTop = 0; 
   document.documentElement.scrollTop = 0;
+}
+
 }
