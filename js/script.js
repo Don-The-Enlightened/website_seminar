@@ -1,42 +1,56 @@
-window.onload
-{
+document.addEventListener('DOMContentLoaded', (event) => {
+
   
-document.addEventListener("scroll", function() {
-  var fadeInElements = document.querySelectorAll('.fade-in-image');
+  document.addEventListener("scroll", function() {
+    var fadeInElements = document.querySelectorAll('.fade-in-image');
 
-  fadeInElements.forEach(function(element) {
-      var elementTopRelativeToDocument = element.getBoundingClientRect().top + window.scrollY;
-      var viewportBottom = window.scrollY + window.innerHeight;
+    fadeInElements.forEach(function(element) {
+        var elementTopRelativeToDocument = element.getBoundingClientRect().top + window.scrollY;
+        var viewportBottom = window.scrollY + window.innerHeight;
 
-      if (elementTopRelativeToDocument < viewportBottom) {
-          element.classList.add('show');
-      }
+        if (elementTopRelativeToDocument < viewportBottom) {
+            element.classList.add('show');
+        }
 
-      if (viewportBottom < elementTopRelativeToDocument) {
-          element.classList.remove('show');
-      }
+        if (viewportBottom < elementTopRelativeToDocument) {
+            element.classList.remove('show');
+        }
+    });
   });
-});
 
-document.getElementById('dark-mode-toggle').addEventListener('click', function() {
-  document.body.classList.toggle('dark-mode');
-});
+  document.getElementById('dark-mode-toggle').addEventListener('click', function() {
+    document.body.classList.toggle('dark-mode');
+  });
 
 
-var mybutton = document.getElementById("toTop");
-window.onscroll = function() {scrollFunction()};
+  var mybutton = document.getElementById("toTop");
+  window.onscroll = function() {scrollFunction()};
 
-function scrollFunction() {
-  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    mybutton.style.display = "block";
-  } else {
-    mybutton.style.display = "none";
+  function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      mybutton.style.display = "block";
+    } else {
+      mybutton.style.display = "none";
+    }
   }
-}
 
-function topFunction() {
-  document.body.scrollTop = 0; 
-  document.documentElement.scrollTop = 0;
-}
+  function topFunction() {
+    document.body.scrollTop = 0; 
+    document.documentElement.scrollTop = 0;
+  }
 
-}
+
+  $(document).ready(function() {
+    // Your jQuery code goes here
+
+    $(".image-main").click(function(){
+      $(".image-credit").slideToggle("slow");
+    });
+    // Example: Changing text color on click
+    $('p').click(function() {
+        $(this).css('color', 'blue');
+    });
+  });
+
+});
+
