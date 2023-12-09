@@ -29,7 +29,7 @@ p {
 }
 
 .container {
-    max-width: 900px; 
+    max-width: 1000px; 
     margin: 0 auto; 
     background-color: #f5f5f5; 
     padding: 20px;
@@ -101,11 +101,13 @@ nav {
 nav ul {
     list-style: none;
     padding: 0;
+    
 }
 
 nav ul li {
     display: inline;
-    margin-right: 20px;
+    margin: .5rem;
+
 }
 nav ul li a {
     display: inline-block;
@@ -128,9 +130,10 @@ nav a {
 }
 nav button{
 
-    display: inline-block;
+    /* display: inline-block; */
+    margin: 0 auto;
     padding: 10px 20px;
-    background-color: #4CAF50; 
+    background-color: #4CAF50;
     color: white;
     text-decoration: none;
     border-radius: 5px;
@@ -142,6 +145,10 @@ nav button{
     background-color: #333;
     color: #ffffff;
     
+}
+#dark-mode-toggle:hover{
+    background-color: #367c39; 
+
 }
 .dark-mode .container{
     background-color: #333;

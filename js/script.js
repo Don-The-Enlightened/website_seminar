@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', (event) => {
 
-  
   document.addEventListener("scroll", function() {
     var fadeInElements = document.querySelectorAll('.fade-in-image');
 
@@ -18,38 +17,43 @@ document.addEventListener('DOMContentLoaded', (event) => {
     });
   });
 
-  document.getElementById('dark-mode-toggle').addEventListener('click', function() {
-    document.body.classList.toggle('dark-mode');
-  });
 
-
-  var mybutton = document.getElementById("toTop");
-  window.onscroll = function() {scrollFunction()};
-
-  function scrollFunction() {
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-      mybutton.style.display = "block";
-    } else {
-      mybutton.style.display = "none";
-    }
-  }
-
-  function topFunction() {
-    document.body.scrollTop = 0; 
-    document.documentElement.scrollTop = 0;
-  }
-
-
+  // jQuery
   $(document).ready(function() {
     // Your jQuery code goes here
 
+    // SLIDE IN AND UT IMAGE CREDIT
     $(".image-main").click(function(){
       $(".image-credit").slideToggle("slow");
     });
-    // Example: Changing text color on click
+
+    // CHANGE COLOR
     $('p').click(function() {
         $(this).css('color', 'blue');
     });
+    
+    // SCROLL TO TOP BUTTON FADE IN/OUT
+    $(window).scroll(function () {
+      if ($(this).scrollTop() > 50) {
+          $('#toTop').fadeIn();
+      } else {
+          $('#toTop').fadeOut();
+      }
+    });
+
+    // SCROLL TO TOP FUNCTION
+    $('#toTop').click(function () {
+      $('body,html').animate({
+          scrollTop: 0
+      }, 400);
+      return false;
+    });
+
+    // DARK MODE
+    $('#dark-mode-toggle').click(function() {
+      $('body').toggleClass('dark-mode');
+    });
+
   });
 
 });
